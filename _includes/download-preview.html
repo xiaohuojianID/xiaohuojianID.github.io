@@ -1,0 +1,50 @@
+<section class="py-20 bg-white dark:bg-gray-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal opacity-0 translate-y-8 transition-all duration-700">
+        <span class="text-brand-600 dark:text-brand-400 font-semibold text-sm tracking-wide uppercase">下载中心</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">Shadowrocket 下载与安装</h2>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+          Shadowrocket 仅上架 iOS App Store。由于国区下架了代理类应用，需要通过外区 Apple ID 下载。我们提供完整的下载指南，包括美区 Apple ID 注册、App Store 下载、首次安装设置等步骤。
+        </p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">iOS App Store 官方下载（需外区账号）</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">美区 Apple ID 注册教程</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">首次安装注意事项与常见错误</span>
+          </li>
+        </ul>
+        <a href="/download/" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 text-white font-semibold rounded-xl hover:bg-brand-700 transition-colors">
+          查看完整下载指南
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <div class="reveal opacity-0 translate-y-8 transition-all duration-700 delay-200">
+        <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 space-y-4">
+          {% assign download_items = "iOS 下载|/download/ios/|已在 iOS 设备上安装？|如何恢复已购应用|/download/ios/#restore|换了新手机？|Apple ID 下载|/download/apple-id/|需要外区 Apple ID？|安装教程|/download/tutorial/|第一次安装 Shadowrocket？|常见错误解决|/errors/|下载或安装出错了？" | split: "|" %}
+          {% for i in (0..3) %}
+          {% assign base = i | times: 4 %}
+          <a href="{{ download_items[base | plus: 1] }}" class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
+            <div class="w-10 h-10 bg-brand-100 dark:bg-brand-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-lg">{{ forloop.index }}</span>
+            </div>
+            <div>
+              <h4 class="font-semibold group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ download_items[base] }}</h4>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{{ download_items[base | plus: 2] }}</p>
+            </div>
+            <svg class="w-5 h-5 text-gray-400 flex-shrink-0 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+<section class="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-accent-900 text-white">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-brand-400 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-accent-400 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-32">
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur rounded-full text-sm mb-6">
+        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+        最新更新：{{ site.time | date: "%Y年%m月" }} · 持续更新中
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+        <span class="bg-gradient-to-r from-blue-400 via-brand-300 to-accent-400 bg-clip-text text-transparent">
+          Shadowrocket 小火箭
+        </span>
+        <br>账号资源中心
+      </h1>
+
+      <p class="text-xl text-white/70 mb-10 leading-relaxed max-w-2xl">
+        提供小火箭账号知识、Apple ID 使用教程、下载指南、配置教程与常见问题。
+        覆盖共享账号、独享账号、Shadowrocket安装等完整内容，助你轻松上手。
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="/tutorial/" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-brand-800 font-semibold rounded-xl hover:shadow-xl hover:shadow-white/20 transition-all transform hover:-translate-y-0.5">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          查看教程
+        </a>
+        <a href="/download/" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all transform hover:-translate-y-0.5">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          下载指南
+        </a>
+        <a href="/faq/" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all transform hover:-translate-y-0.5">
+          常见问题
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

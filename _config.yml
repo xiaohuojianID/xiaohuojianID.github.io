@@ -1,0 +1,66 @@
+# Shadowrocket 小火箭账号资源中心
+title: 小火箭账号资源中心
+tagline: Shadowrocket 小火箭账号知识、下载指南、配置教程与常见问题
+description: 提供小火箭账号知识、Apple ID 使用教程、下载指南、配置教程与常见问题。覆盖共享账号、独享账号、Shadowrocket安装等完整内容。
+url: https://xiaohuojianid.github.io
+baseurl: ""
+author:
+  name: 小火箭账号资源中心
+
+# SEO
+lang: zh-CN
+timezone: Asia/Shanghai
+
+# Social
+social:
+  name: 小火箭账号资源中心
+  links:
+    - https://github.com/xiaohuojianid
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Pagination
+paginate: 12
+paginate_path: /blog/page:num/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Collections
+collections:
+  wiki_entries:
+    output: true
+    permalink: /wiki/:path/
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+# Exclude from build
+exclude:
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - postcss.config.js
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - .gitignore

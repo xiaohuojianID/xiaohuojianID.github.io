@@ -1,0 +1,187 @@
+---
+layout: page
+title: 常见问题
+description: Shadowrocket 小火箭常见问题解答 — 涵盖下载、安装、账号、配置、节点等50+个常见问题。
+show_cta: false
+faq_jsonld:
+  - q: 什么是小火箭账号？
+    a: 小火箭账号指用于下载 Shadowrocket 的 Apple ID。由于国区 App Store 已下架代理类应用，需要外区 Apple ID 才能下载。
+  - q: 怎么下载 Shadowrocket？
+    a: 使用外区 Apple ID 登录 App Store，搜索「Shadowrocket」即可下载。下载完成后退出外区账号，换回自己的 Apple ID。
+  - q: 共享账号安全吗？
+    a: 共享账号仅登录 App Store 下载应用，不登录 iCloud，不会影响个人数据。下载完成后退出即可。
+---
+
+<h2 id="account">账号相关</h2>
+
+### 什么是小火箭账号？
+
+小火箭账号指用于下载 Shadowrocket 的 Apple ID。Shadowrocket 仅上架 iOS App Store，因国区已下架代理类应用，用户需要外区（如美区）Apple ID 才能下载。这些 Apple ID 被称为「小火箭账号」。
+
+### 什么是共享账号？
+
+共享账号是多人在 App Store 共用但不同时登录 iCloud 的 Apple ID。用户仅使用该账号登录 App Store 下载应用，下载后退出。适合一次性下载、偶尔使用的场景。
+
+### 共享账号安全吗？
+
+共享账号仅登录 App Store，不登录 iCloud，不会影响你的个人数据、照片、通讯录等。下载完成后退出即可。但不要绑定自己的支付方式或手机号。
+
+### Apple ID 会被锁吗？
+
+如果多人同时用同一共享账号登录 iCloud 或频繁切换设备，可能触发 Apple 安全机制导致锁定。但仅登录 App Store 下载应用是安全的。
+
+### 什么是独享账号？
+
+独享账号是一个专属你的 Apple ID，无人与你共用。你可以自己修改密码、密保和安全设置，安全性最高，适合长期使用。
+
+### 共享和独享怎么选？
+
+偶尔下载一次 → 共享账号。长期使用、重视安全 → 独享账号。查看 [账号指南](/account/) 了解详细对比。
+
+---
+
+<h2 id="download">下载相关</h2>
+
+### Shadowrocket 在哪里下载？
+
+Shadowrocket 仅在 iOS App Store 上架。使用外区（美区/港区）Apple ID 登录 App Store 后搜索下载。
+
+### 安卓可以用 Shadowrocket 吗？
+
+不可以。Shadowrocket 是 iOS 专属应用，安卓用户可以使用 Clash Meta、v2rayNG 等替代工具。
+
+### 怎么下载 Shadowrocket？
+
+1. 准备一个外区 Apple ID
+2. 打开 App Store，退出当前 Apple ID
+3. 登录外区 Apple ID
+4. 搜索「Shadowrocket」
+5. 下载安装
+6. 下载完后退出外区 Apple ID
+
+查看 [下载指南](/download/) 获取详细图文教程。
+
+### 如何注册美区 Apple ID？
+
+可以在 Apple 官网选择美国作为地区进行注册，注册时选择「None」作为支付方式。详细步骤见 Apple ID 注册指南。
+
+### 下载提示「无法连接 App Store」怎么办？
+
+- 检查网络连接
+- 尝试切换 Wi-Fi/蜂窝数据
+- 确认 App Store 没有被屏幕使用时间限制
+
+### 如何恢复已购应用？
+
+换了新 iPhone 后：
+1. 登录当初下载时使用的 Apple ID
+2. App Store → 右上角头像 → 已购项目
+3. 找到 Shadowrocket，点击下载（云朵图标）
+
+---
+
+<h2 id="install">安装相关</h2>
+
+### 为什么安装失败？
+
+常见原因：
+- 存储空间不足
+- iOS 版本过低（需要 iOS 12.0 以上）
+- 网络不稳定导致下载中断
+
+### Shadowrocket 支持哪些 iOS 版本？
+
+支持 iOS 12.0 及以上版本。
+
+### 安装后找不到应用？
+
+使用外区 Apple ID 下载后，应用可能被隐藏在 App 资源库中。在主屏幕右滑到最后一页打开 App 资源库搜索。
+
+---
+
+<h2 id="config">配置相关</h2>
+
+### 如何导入订阅？
+
+1. 打开 Shadowrocket
+2. 点击右上角 +
+3. 类型选择「Subscribe」
+4. 粘贴订阅链接
+5. 保存即可自动拉取节点
+
+### 支持哪些协议？
+
+Shadowsocks、ShadowsocksR、V2Ray、Trojan、HTTP、HTTPS、Socks5 等。
+
+### Clash 配置怎么转 Shadowrocket？
+
+Clash 配置文件可以通过订阅转换工具转为 Shadowrocket 格式，或直接使用兼容的订阅链接导入。
+
+### 为什么节点测速快但实际上慢？
+
+测速结果只反映延迟，不代表实际带宽。高峰时段国际线路拥堵可能导致实际速度下降。建议多试几个节点找出最佳线路。
+
+### 如何更新订阅？
+
+在 Shadowrocket 主页，点击订阅条目 → 向右滑动 → 点击更新按钮，或下拉刷新。
+
+---
+
+<h2 id="errors">错误解决</h2>
+
+### 无法连接怎么办？
+
+1. 确认节点在线、服务器正常
+2. 尝试切换为全局路由模式
+3. 更换不同节点试试
+4. 重启 VPN 连接
+
+### 订阅导入失败？
+
+- 检查订阅链接是否完整、未过期
+- 尝试用 Safari 打开链接验证是否可访问
+- 使用蜂窝数据而非 Wi-Fi 更新
+
+### 提示 VPN 配置失败？
+
+- 检查是否有其他 VPN 应用冲突
+- 删除旧 VPN 配置后重试
+- 重启 iPhone 后再试
+
+### Shadowrocket 频繁断开？
+
+- 检查是否开启了省电模式（会限制后台活动）
+- 确认 Shadowrocket 后台刷新权限已开启
+- 尝试更换更稳定的节点
+
+---
+
+<h2 id="account-lock">账号锁定</h2>
+
+### Apple ID 被锁了怎么办？
+
+如果是共享账号，联系提供方解决。如果是自己的账号，通过 Apple 官网的 iforgot.apple.com 找回。
+
+### 退出后无法登录自己的 Apple ID？
+
+退出共享账号后重新登录自己的 Apple ID，如果遇到问题可尝试重启手机。
+
+---
+
+<h2 id="other">其他</h2>
+
+### Shadowrocket 需要付费吗？
+
+Shadowrocket 在 App Store 是付费应用（约 \\(2.99），需要先购买。购买后永久使用，支持同一 Apple ID 下多设备安装。
+
+### 怎么更新 Shadowrocket？
+
+在 App Store 中登录下载时使用的 Apple ID，进入更新页面即可更新。如果国区已下架，需要用原下载时使用的外区 Apple ID 更新。
+
+### Shadowrocket 耗电吗？
+
+正常情况下耗电极低。但如果同时运行多个连接或使用「始终在线」功能，会增加电量消耗。建议不需要时关闭 VPN 连接。
+
+### 多个设备可以同时使用吗？
+
+同一 Apple ID 购买的应用可以在多台设备上安装使用。共享账号下载的应用同样可以在多台设备安装（但使用共享账号本身需要注意安全）。

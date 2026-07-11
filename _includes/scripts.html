@@ -1,0 +1,63 @@
+<!-- Alpine.js -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script>
+// Dark mode init
+document.addEventListener('alpine:init', () => {
+  Alpine.store('darkMode', {
+    init() {
+      const stored = localStorage.getItem('darkMode')
+      if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      }
+    }
+  })
+})
+
+// Dark mode toggle persistence
+document.addEventListener('alpine:initialized', () => {
+  window.Alpine.effect(() => {
+    const dark = Alpine.store('darkMode')
+    if (dark) {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('darkMode', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('darkMode', 'light')
+    }
+  })
+})
+
+// Scroll reveal animation
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0')
+        entry.target.classList.remove('opacity-0', 'translate-y-8')
+      }
+    })
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' })
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
+})
+</script>
+
+<!-- Page-specific TOC generation -->
+{% if page.toc %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toc = document.getElementById('toc')
+  if (!toc) return
+  const headings = document.querySelectorAll('.prose h2, .prose h3')
+  headings.forEach(h => {
+    if (!h.id) h.id = h.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]/g, '')
+    const link = document.createElement('a')
+    link.href = '#' + h.id
+    link.className = (h.tagName === 'H3' ? 'ml-4 ' : '') + 'block py-1 text-gray-600 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors'
+    link.textContent = h.textContent
+    toc.appendChild(link)
+  })
+})
+</script>
+{% endif %}

@@ -1,0 +1,19 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  {% include head.html %}
+</head>
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
+  {% include header.html %}
+
+  <main class="min-h-screen">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+  {% include scripts.html %}
+</body>
+</html>
