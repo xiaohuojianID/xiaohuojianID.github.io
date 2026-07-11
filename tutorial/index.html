@@ -1,103 +1,275 @@
 ---
 layout: page
-title: 教程中心
-description: Shadowrocket 小火箭从入门到精通完整教程。覆盖下载、安装、配置订阅、节点导入、Clash转换等全部环节。
+title: 教程中心 - Shadowrocket 小火箭使用教程
+description: Shadowrocket 小火箭从入门到精通完整教程，覆盖下载安装、节点导入、订阅配置、规则分流、Clash转换、错误解决等全部环节，帮助你快速掌握 Shadowrocket。
 show_cta: true
 ---
 
-{% include tip-box.html type="tip" title="还没下载 Shadowrocket？" content="先查看[下载指南](/download/)，Shadowrocket 仅上架 iOS App Store，需要外区 Apple ID 下载。" %}
-
----
-
-## 🚀 首次打开 Shadowrocket
-
-1. 打开 Shadowrocket 应用
-2. 首次使用会提示添加 VPN 配置，点击 **「允许」**
-3. 输入你的 iPhone 解锁密码确认
-4. VPN 配置添加完成后即可使用
-
----
-
-## 🔗 如何添加节点
-
-<div class="not-prose grid md:grid-cols-3 gap-4 my-6">
-
-<div class="p-5 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800">
-  <div class="text-2xl mb-3">✍️</div>
-  <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">手动添加</h4>
-  <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-1 ml-4 list-decimal">
-    <li>点击右上角 <strong>+</strong></li>
-    <li>选择节点类型</li>
-    <li>填写地址、端口、密码</li>
-    <li>点击「完成」保存</li>
-  </ol>
+<div class="not-prose relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-accent-900 text-white rounded-2xl p-8 md:p-12 mb-10">
+  <div class="relative z-10">
+    <h1 class="text-3xl md:text-5xl font-extrabold mb-4">Shadowrocket 教程中心</h1>
+    <p class="text-lg text-white/70 max-w-2xl">从下载安装到高级配置，帮助你快速掌握 Shadowrocket 的全部功能。涵盖基础设置、节点管理、规则分流等完整内容。</p>
+  </div>
 </div>
 
-<div class="p-5 bg-gray-50 dark:bg-gray-900 rounded-xl border border-brand-500 dark:border-brand-400">
-  <div class="text-2xl mb-3">📋</div>
-  <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">订阅导入 <span class="text-xs bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 px-2 py-0.5 rounded-full">推荐</span></h4>
-  <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-1 ml-4 list-decimal">
-    <li>点击右上角 <strong>+</strong></li>
-    <li>类型选择 <strong>Subscribe</strong></li>
-    <li>粘贴订阅链接</li>
-    <li>保存后自动拉取节点</li>
-  </ol>
-</div>
-
-<div class="p-5 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800">
-  <div class="text-2xl mb-3">📷</div>
-  <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">扫码添加</h4>
-  <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-1 ml-4 list-decimal">
-    <li>点击左上角扫描图标</li>
-    <li>扫描节点二维码</li>
-    <li>自动识别并添加</li>
-  </ol>
-</div>
-
+<div class="not-prose grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm mb-10">
+  <a href="#download-guide" class="flex items-center gap-2 px-4 py-3 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-brand-50 dark:hover:bg-brand-900/30 text-gray-700 dark:text-gray-300 hover:text-brand-600 transition-colors">
+    <span class="text-lg">⬇️</span> 下载教程
+  </a>
+  <a href="#install-guide" class="flex items-center gap-2 px-4 py-3 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-brand-50 dark:hover:bg-brand-900/30 text-gray-700 dark:text-gray-300 hover:text-brand-600 transition-colors">
+    <span class="text-lg">📲</span> 安装教程
+  </a>
+  <a href="#config-guide" class="flex items-center gap-2 px-4 py-3 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-brand-50 dark:hover:bg-brand-900/30 text-gray-700 dark:text-gray-300 hover:text-brand-600 transition-colors">
+    <span class="text-lg">⚙️</span> 配置教程
+  </a>
+  <a href="#advanced-guide" class="flex items-center gap-2 px-4 py-3 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-brand-50 dark:hover:bg-brand-900/30 text-gray-700 dark:text-gray-300 hover:text-brand-600 transition-colors">
+    <span class="text-lg">🚀</span> 高级教程
+  </a>
+  <a href="#troubleshoot" class="flex items-center gap-2 px-4 py-3 bg-gray-50 dark:bg-gray-900 rounded-xl hover:bg-brand-50 dark:hover:bg-brand-900/30 text-gray-700 dark:text-gray-300 hover:text-brand-600 transition-colors">
+    <span class="text-lg">🔧</span> 问题解决
+  </a>
 </div>
 
 ---
 
-## 🔌 首次连接
+<h2 id="download-guide" class="flex items-center gap-2">⬇️ 下载教程</h2>
 
-1. 选择一个节点
-2. 打开顶部的连接开关
-3. 首次连接会提示 VPN 授权，点击 **「允许」**
-4. 连接成功后状态栏会显示 VPN 图标
+### Shadowrocket 怎么下载？
+
+Shadowrocket 是 iOS 平台最知名的网络代理工具之一，仅上架 Apple App Store。由于国区 App Store 下架了所有代理类 VPN 应用，你需要使用外区 Apple ID（美区、港区、日区等）才能搜索和下载。
+
+**下载步骤：**
+
+1. **准备一个外区 Apple ID** — 可以在我们这里购买小火箭共享账号或独享账号
+2. **打开 App Store**，点击右上角头像
+3. **退出当前 Apple ID**，滑到底部点击「退出登录」
+4. **登录外区 Apple ID**，输入账号密码
+5. **搜索「Shadowrocket」** — 注意拼写正确
+6. **点击下载** — 售价 $2.99，绑定该 Apple ID
+7. **下载完成后退出外区账号**，换回自己的 Apple ID
+
+> 💡 **提示**：下载完成后 Shadowrocket 就属于你的 Apple ID 了。以后换手机或重装系统，登录原来的 Apple ID 在已购项目中可以重新下载，不需要再次付费。
+
+### App Store 下载
+
+登录外区 Apple ID 后，在 App Store 搜索框输入「Shadowrocket」。如果搜不到，检查以下几点：
+
+- 确认当前 App Store 显示的是英文界面（说明已经切换到美区）
+- 如果还是中文界面，说明还是国区，退出重新登录外区账号
+- 尝试搜索「Shadowrocket」完整名称，不要打错字母
+- 重启 App Store 应用后再搜索
+
+### Apple ID 登录
+
+登录时注意：
+
+- **只在 App Store 登录**，不要登录「设置」里的 iCloud
+- 如果你用的是共享账号，下载完成后立即退出
+- 不要在这个账号上绑定你自己的支付方式或手机号
+- 如果提示需要验证，联系客服处理，不要多次尝试错误密码
+
+### 恢复购买
+
+换了新 iPhone 或重装系统后：
+
+1. 登录当初下载时使用的 Apple ID
+2. 打开 App Store → 右上角头像 → 已购项目
+3. 找到 Shadowrocket，点击旁边的云朵图标
+4. 下载完成后退出该账号
 
 ---
 
-## 🎯 进阶配置
+<h2 id="install-guide" class="flex items-center gap-2">📲 安装教程</h2>
+
+### 安装 Shadowrocket
+
+下载完成后，Shadowrocket 会自动安装到你的 iPhone 或 iPad 桌面。如果桌面找不到：
+
+1. 在主屏幕向右滑动，打开 **App 资源库**
+2. 在搜索框输入「Shadowrocket」
+3. 长按图标，选择「添加到主屏幕」
+
+### 首次配置
+
+第一次打开 Shadowrocket，你会看到：
+
+1. **VPN 配置授权** — 点击「允许」
+2. **输入锁屏密码** — 确认授权
+3. **主界面** — 你会看到节点列表、连接开关和底部菜单
+
+### 允许 VPN
+
+Shadowrocket 通过 iOS 的 VPN 机制工作，首次连接时系统会提示添加 VPN 配置。点击「允许」并输入你的 iPhone 锁屏密码。这是正常的安全验证，所有 VPN 应用都需要这一步。
+
+### 添加订阅
+
+这是使用 Shadowrocket 最重要的一步：
+
+1. 点击右上角 **+**
+2. 类型选择 **Subscribe**（订阅）
+3. 在 URL 栏粘贴你的订阅链接
+4. 点击「完成」
+5. 保存后自动拉取节点列表
+
+节点列表会显示在主页面上，每个节点右侧有延迟测试结果。
+
+---
+
+<h2 id="config-guide" class="flex items-center gap-2">⚙️ 配置教程</h2>
+
+### 导入订阅
+
+订阅是获取代理节点最方便的方式。你从机场服务商那里购买的订阅链接，可以直接导入 Shadowrocket。
+
+**操作步骤：**
+
+1. 复制订阅链接（通常由服务商提供）
+2. 打开 Shadowrocket → 右上角 **+**
+3. 类型选择 **Subscribe**
+4. 粘贴链接 → 点击「完成」
+5. 页面会自动拉取所有节点
+
+### 更新订阅
+
+节点列表需要定期更新才能保持最新：
+
+- **手动更新**：主页找到订阅条目 → 向右滑动 → 点击「更新」
+- **批量更新**：主页下拉刷新，所有订阅同时更新
+- **自动更新**：设置 → 订阅 → 开启「自动更新」，设置更新间隔
+
+### 节点切换
+
+在主页面的节点列表中，点击你想使用的节点即可切换连接。建议选择延迟较低的节点，方法：
+
+1. 点击顶部的 **⚡ 测速按钮**，对所有节点进行延迟测试
+2. 绿色延迟表示响应快，黄色次之，红色最慢
+3. 点击选择延迟低的节点
+
+### 规则模式
+
+Shadowrocket 支持三种路由模式：
+
+- **全局路由**：所有流量都经过代理，适合需要完全代理的场景
+- **配置（规则）**：根据预设规则智能分流，国内网站直连、国外网站走代理（推荐日常使用）
+- **场景模式**：根据不同 Wi-Fi 或时间自动切换配置
+
+日常使用推荐「配置」模式，兼顾国内访问速度和国际连接。
+
+---
+
+<h2 id="advanced-guide" class="flex items-center gap-2">🚀 高级教程</h2>
+
+### DNS 设置
+
+DNS 解析直接影响访问速度和稳定性。Shadowrocket 支持多种 DNS 配置：
+
+- **加密 DNS（DoH/DoT）**：防止 DNS 污染和劫持
+- **自定义 DNS**：可以指定使用 Cloudflare（1.1.1.1）、Google（8.8.8.8）等公共 DNS
+- **DNS 分流**：国内域名走国内 DNS，海外域名走加密 DNS
+
+**设置路径**：Shadowrocket → 设置 → DNS
+
+### 分流策略
+
+分流是 Shadowrocket 最强大的功能之一。通过预设的规则配置，可以实现：
+
+- 国内网站直接连接，不影响速度
+- 国际网站通过代理访问
+- 特定应用或域名走指定线路
+- 广告域名直接拦截
+
+推荐使用成熟的规则配置（如 ACL4SSR、Loyalsoldier 等），可以直接导入使用。
 
 ### 规则配置
 
-Shadowrocket 支持强大的规则分流功能：
+进入「配置」页面，可以查看和编辑当前使用的规则文件。每条规则包含：
 
-| 模式 | 说明 |
-|------|------|
-| **全局路由** | 所有流量走代理 |
-| **配置（规则）** | 按预设规则分流 |
-| **场景模式** | 不同网络环境自动切换 |
+- **类型**：DOMAIN（域名）、IP-CIDR（IP 段）、GEOIP（地区 IP）等
+- **策略**：Proxy（代理）、Direct（直连）、Reject（拦截）
+- **匹配规则**：支持通配符和正则表达式
 
-### 如何导入 Clash 配置
+你可以导入社区维护的规则集，也可以根据自己的需求手动添加规则。
 
-1. 将 Clash 配置文件的链接转换为 Shadowrocket 兼容格式
-2. 点击右上角 **+** → Subscribe
-3. 粘贴订阅链接
-4. 保存并更新
+### 代理模式
 
-### Sing-box 节点导入
+Shadowrocket 支持多种代理模式：
 
-Shadowrocket 2.0 以上版本支持 Sing-box 订阅格式，直接导入即可使用。
+- **Shadowsocks**：轻量级加密代理，速度快
+- **V2Ray**：功能丰富的代理协议，支持多种传输方式
+- **Trojan**：基于 HTTPS 的代理协议，伪装性好
+- **TUIC / Hysteria2**：基于 QUIC 的新一代协议，弱网环境表现好
+
+不同的协议适合不同的使用场景，选择哪种取决于你的服务商支持和网络环境。
+
+### IPv6 支持
+
+如果你的网络支持 IPv6，可以在设置中开启 IPv6。注意：
+
+- 开启后部分仅支持 IPv4 的应用可能连接异常
+- 建议仅在需要访问 IPv6 资源时开启
+- 如果遇到连接问题，先关闭 IPv6 测试
 
 ---
 
-## ❓ 常见配置问题
+<h2 id="troubleshoot" class="flex items-center gap-2">🔧 问题解决</h2>
 
-### 连接后无法上网？
+### 连接失败
 
-1. 检查节点是否在线
-2. 尝试切换路由模式为「全局路由」
-3. 确认 VPN 配置未被其他应用冲突
+**常见原因和解决方法：**
 
-{% include tip-box.html type="warning" title="订阅更新失败？" content="检查订阅链接是否过期，尝试使用蜂窝数据更新，或重新导入订阅链接。" %}
+1. **节点不可用** — 尝试切换到其他节点
+2. **网络问题** — 切换 Wi-Fi 和蜂窝数据试试
+3. **VPN 冲突** — 关闭其他 VPN 应用
+4. **配置错误** — 检查订阅链接是否有效
+
+如果以上都不行，尝试重启 Shadowrocket 或重启手机。
+
+### 下载失败
+
+App Store 下载失败的处理：
+
+1. 检查 iPhone 存储空间是否足够
+2. 切换网络环境（Wi-Fi 换蜂窝数据）
+3. 登录正确的 Apple ID
+4. 重启 App Store 应用
+5. 重启手机后重新下载
+
+### 闪退
+
+Shadowrocket 闪退的常见原因：
+
+1. **iOS 版本过低** — 需要 iOS 12.0 以上
+2. **内存不足** — 关闭后台其他应用
+3. **配置冲突** — 重置配置后重试
+4. **应用损坏** — 删除后重新下载
+
+### 超时
+
+节点连接超时处理：
+
+1. 切换到其他节点测试
+2. 切换到全局路由模式
+3. 更换网络环境（Wi-Fi 换 4G/5G）
+4. 使用不同协议测试
+5. 如果所有节点都超时，可能是你的本地网络问题
+
+### 更新失败
+
+订阅更新失败处理：
+
+1. 检查订阅链接是否过期
+2. 用 Safari 打开链接验证可访问
+3. 切换到蜂窝数据更新
+4. 删除订阅后重新导入
+5. 联系服务商确认订阅状态
+
+---
+
+<div class="not-prose bg-gradient-to-r from-brand-50 to-accent-50 dark:from-brand-950/50 dark:to-accent-950/50 rounded-2xl p-8 mt-10">
+  <h3 class="text-xl font-bold mb-4">💡 需要更多帮助？</h3>
+  <p class="text-gray-600 dark:text-gray-400 mb-4">查看我们的<a href="/faq/" class="text-brand-600 dark:text-brand-400">常见问题</a>页面，或直接联系客服获取一对一帮助。</p>
+  <div class="flex flex-wrap gap-3">
+    <a href="/download/" class="px-5 py-3 bg-brand-600 text-white rounded-xl hover:bg-brand-700 transition-colors text-sm font-semibold">查看下载指南</a>
+    <a href="/faq/" class="px-5 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-sm font-semibold">常见问题</a>
+  </div>
+</div>
