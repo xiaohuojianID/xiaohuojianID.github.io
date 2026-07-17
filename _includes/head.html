@@ -1,89 +1,74 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#0a1628">
 
-<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
+    {%- seo -%}
 
-{% if page.description %}
-<meta name="description" content="{{ page.description }}">
-{% else %}
-<meta name="description" content="{{ site.description }}">
-{% endif %}
+    {%- if page.keywords -%}
+    <meta name="keywords" content="{{ page.keywords }}">
+    {%- endif -%}
 
-<link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    {%- feed_meta -%}
 
-<!-- Styles -->
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+    <link rel="manifest" href="{{ '/manifest.json' | relative_url }}">
 
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+    <!-- Google Fonts: Noto Sans SC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- RSS -->
-<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+    <!-- Tailwind CSS (预编译) -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-<!-- Open Graph -->
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-<meta property="og:url" content="{{ site.url }}{{ page.url | replace:'index.html','' }}">
-<meta property="og:site_name" content="{{ site.title }}">
-<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-<meta property="og:locale" content="zh_CN">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
-<!-- JSON-LD Structured Data -->
-{% if page.layout == 'post' %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "{{ page.title }}",
-  "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}",
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
-  "author": { "@type": "Organization", "name": "{{ site.author.name }}" }
-}
-</script>
-{% endif %}
+    {%- if page.custom_css -%}
+        <link rel="stylesheet" href="{{ page.custom_css | relative_url }}">
+    {%- endif -%}
 
-{% if page.faq_jsonld %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {% for faq in page.faq_jsonld %}
+    <!-- JSON-LD Breadcrumb -->
+    {%- if page.breadcrumb -%}
+    <script type="application/ld+json">
     {
-      "@type": "Question",
-      "name": {{ faq.q | jsonify }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ faq.a | jsonify }}
-      }
-    }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ]
-}
-</script>
-{% endif %}
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "首页", "item": "{{ '/' | absolute_url }}"}
+            {%- for crumb in page.breadcrumb -%}
+            ,{"@type": "ListItem", "position": {{ forloop.index | plus: 1 }}, "name": "{{ crumb.name }}", "item": "{{ crumb.url | absolute_url }}"}
+            {%- endfor -%}
+        ]
+    }
+    </script>
+    {%- endif -%}
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "{{ site.title }}",
-  "url": "{{ site.url }}",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "{{ '/?s=' | absolute_url }}{search_term}",
-    "query-input": "required name=search_term"
-  }
-}
-</script>
+    <!-- JSON-LD Site Search -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "{{ '/' | absolute_url }}",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "{{ '/?s=' | absolute_url }}{search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</head>
+<body class="bg-white dark:bg-[#0a1628] text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300" x-data="{ darkMode: localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches) }" x-init="$watch('darkMode', val => { document.documentElement.classList.toggle('dark', val); localStorage.setItem('theme', val ? 'dark' : 'light') })" :class="{ 'dark': darkMode }">
